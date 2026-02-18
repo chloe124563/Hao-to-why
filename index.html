@@ -495,6 +495,27 @@
             .modal-content { width: 95%; margin: 15% auto; padding: 20px; }
             .close-btn { right: 10px; top: 5px; }
         }
+
+            .quiz-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); /* 預設兩欄兩列 */
+                gap: 25px;
+                margin: 40px 0;
+            }
+            .quiz-img-container {
+                background: #fff;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                cursor: pointer;
+            }
+            .quiz-img-container:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 10px 20px rgba(68, 77, 108, 0.15);
+            }
+            .quiz-img-container img { width: 100%; display: block; height: auto; }
+
+            @media (max-width: 600px) {
+                .quiz-grid { grid-template-columns: 1fr; } /* 手機變一欄四列 */
+            }
     </style>
 </head>
 <body>
@@ -521,6 +542,10 @@
                 產品展示
                 <span>STORE</span>
             </button>
+            <button class="nav-btn" onclick="showPage('quiz')">
+                標點測驗
+                <span>QUIZ</span>
+</button>
         </div>
     </nav>
 
@@ -763,7 +788,44 @@
                 </div>
             </div>
         </div>
-        <footer>
+<div id="quiz" class="page-section">
+            <div class="section-header">
+                <div class="section-title">號外！溝通人格觀測儀</div>
+                <span class="section-subtitle">Communication Personality Quiz</span>
+            </div>
+
+            <div style="max-width: 950px; margin: 0 auto;">
+                <div class="issue-block">
+                    <h4>觀測前言：在對話的盡頭，哪顆標點行星是您的本命星？</h4>
+                    <p>觀測小組發現，語宙中有15顆掌管溝通的「標點符號行星」，牽引著我們溝通的情感與節奏，但目前這張星際圖譜還是一片空白。為了解標點符號與人們溝通的關係，我們展開「溝通人格普查計畫」。透過觀測儀來蒐集廣大民眾的對話頻率。</p>
+                </div>
+
+                <div class="decode-card" style="margin: 40px 0; background: #fff; border: 2px solid var(--color-primary); padding: 30px;">
+                    <div class="decode-title" style="font-size: 1.5rem; text-align: center; margin-bottom: 30px;">語宙四大社交星系</div>
+                    <div class="quiz-grid">
+                        <div class="quiz-img-container"><img src="心理測驗-01.png" alt="星系01"></div>
+                        <div class="quiz-img-container"><img src="心理測驗-02.png" alt="星系02"></div>
+                        <div class="quiz-img-container"><img src="心理測驗-03.png" alt="星系03"></div>
+                        <div class="quiz-img-container"><img src="心理測驗-04.png" alt="星系04"></div>
+                    </div>
+                </div>
+
+                <div class="issue-block" style="border: 2px solid var(--color-primary); background: #fff; padding: 30px;">
+                    <h4 style="margin-top: 0; color: var(--color-primary);">溝通人格普查計畫：協助對話頻率建檔</h4>
+                    <p style="margin-bottom: 0;">完成測驗後，您的觀測結果將協助我們建構出最完整的「當代標點性格圖譜」。每一筆數據都是《號外之WHY》的重要史料，請務必協助我們將您的星體座標寫入報社檔案中。</p>
+                </div>
+
+                <div style="text-align: center; margin: 80px 0; padding: 40px; border-top: 2px dashed var(--color-primary);">
+                    <h3 style="font-family: var(--font-title); margin-bottom: 15px; font-size: 1.6rem;">誰是您的本命標點符號？</h3>
+                    <a href="https://ooopenlab.cc/quiz/FJFo211kptPWkMqMpVRP" target="_blank" class="read-more-btn" style="text-decoration: none; display: inline-block; width: 150px; padding: 10px 0; font-size: 1rem; font-weight: bold; background: var(--color-primary); color: #fff; margin: 0 auto;">
+                        啟動觀測儀 →
+                    </a>
+                    <p style="font-size: 0.8rem; color: #888; margin-top: 25px; letter-spacing: 1px; text-align: center;">
+                        (點擊將跳轉至外部測驗頁面)
+                    </p>
+                </div>
+            </div>
+        </div> <footer>
             <div class="footer-social">
                 <a href="https://www.instagram.com/hao.to.why?igsh=MXVjanl5N3oyOWpoMA==" target="_blank" class="social-link">
                     <svg class="ig-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -772,9 +834,13 @@
                     Follow on Instagram
                 </a>
             </div>
-
             <p>號外之WHY © 2025 畢業製作專題 | 國立高雄大學</p>
         </footer>
+    </div> <div id="mainModal" class="modal">
+        <div class="modal-content">
+            <div class="close-btn" onclick="closeModal()">×</div>
+            <div id="modalBody" class="modal-body"></div>
+        </div>
     </div>
 
     <div id="mainModal" class="modal">
