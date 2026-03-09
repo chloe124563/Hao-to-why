@@ -179,6 +179,20 @@
         .blog-date .day { font-size: 2rem; font-weight: bold; display: block; line-height: 1.2; }
         .blog-date .year { font-size: 0.9rem; margin-top: 5px; display: block; }
 
+        /* 部落格分頁樣式 */
+        .pagination-container {
+            display: flex; justify-content: center; gap: 10px; margin-top: 20px;
+        }
+        .page-btn {
+            padding: 8px 16px; border: 1px solid var(--color-primary);
+            background: transparent; color: var(--color-primary);
+            cursor: pointer; font-family: var(--font-title); font-size: 1rem;
+            transition: all 0.3s;
+        }
+        .page-btn.active, .page-btn:hover {
+            background: var(--color-primary); color: #fff;
+        }
+
         /* --- 標點圖鑑樣式 --- */
         .punctuation-grid {
             display: grid;
@@ -545,7 +559,7 @@
             <button class="nav-btn" onclick="showPage('quiz')">
                 標點測驗
                 <span>QUIZ</span>
-</button>
+            </button>
         </div>
     </nav>
 
@@ -566,28 +580,8 @@
                 <span class="section-subtitle">BLOG</span>
             </div>
 
-            <div class="blog-list">
-                <div class="blog-item" onclick="openModal('blog1')">
-                    <div class="blog-date"><span class="day">01</span><span class="year">2025/10</span></div>
-                    <div>
-                        <h3>【編輯室手記】從「逗留」出發：記初審那日的六個紅圈</h3>
-                        <p style="color:#666;">回顧「逗留計畫」時期，從新潮漸變色到復古報刊的轉變...</p>
-                    </div>
-                </div>
-                <div class="blog-item" onclick="openModal('blog2')">
-                    <div class="blog-date"><span class="day">15</span><span class="year">2025/10</span></div>
-                    <div>
-                        <h3>【特刊】風格解密：為何捨棄新潮漸層？一段關於「號外」誕生的秘辛</h3>
-                        <p style="color:#666;">為了撐起「標點符號觀測所」的設定，我們忍痛捨棄了原本的視覺稿...</p>
-                    </div>
-                </div>
-                <div class="blog-item" onclick="openModal('blog3')">
-                    <div class="blog-date"><span class="day">20</span><span class="year">2025/11</span></div>
-                    <div>
-                        <h3>【二審現場】當問號變得尖銳：一場關於「形狀心理學」的對話</h3>
-                        <p style="color:#666;">小誌打樣與海報首次亮相！揭開符號背後的心理意象。</p>
-                    </div>
-                </div>
+            <div class="blog-list" id="blogListContainer">
+                
                 <div class="blog-item" onclick="openModal('blog4')">
                     <div class="blog-date"><span class="day">19</span><span class="year">2026/01</span></div>
                     <div>
@@ -595,7 +589,33 @@
                         <p style="color:#666;">三審過後，編輯室暫時放下了美工刀與膠水，開始拿起了筆記本規劃展場動線...</p>
                     </div>
                 </div>
+
+                <div class="blog-item" onclick="openModal('blog3')">
+                    <div class="blog-date"><span class="day">20</span><span class="year">2025/11</span></div>
+                    <div>
+                        <h3>【二審現場】當問號變得尖銳：一場關於「形狀心理學」的對話</h3>
+                        <p style="color:#666;">小誌打樣與海報首次亮相！揭開符號背後的心理意象。</p>
+                    </div>
+                </div>
+
+                <div class="blog-item" onclick="openModal('blog2')">
+                    <div class="blog-date"><span class="day">15</span><span class="year">2025/10</span></div>
+                    <div>
+                        <h3>【特刊】風格解密：為何捨棄新潮漸層？一段關於「號外」誕生的秘辛</h3>
+                        <p style="color:#666;">為了撐起「標點符號觀測所」的設定，我們忍痛捨棄了原本的視覺稿...</p>
+                    </div>
+                </div>
+
+                <div class="blog-item" onclick="openModal('blog1')">
+                    <div class="blog-date"><span class="day">01</span><span class="year">2025/10</span></div>
+                    <div>
+                        <h3>【編輯室手記】從「逗留」出發：記初審那日的六個紅圈</h3>
+                        <p style="color:#666;">回顧「逗留計畫」時期，從新潮漸變色到復古報刊的轉變...</p>
+                    </div>
+                </div>
             </div>
+            
+            <div class="pagination-container" id="blogPagination"></div>
         </div>
 
         <div id="about" class="page-section">
@@ -788,7 +808,7 @@
                 </div>
             </div>
         </div>
-<div id="quiz" class="page-section">
+        <div id="quiz" class="page-section">
             <div class="section-header">
                 <div class="section-title">號外！溝通人格觀測儀</div>
                 <span class="section-subtitle">Communication Personality Quiz</span>
@@ -836,12 +856,7 @@
             </div>
             <p>號外之WHY © 2025 畢業製作專題 | 國立高雄大學</p>
         </footer>
-    </div> <div id="mainModal" class="modal">
-        <div class="modal-content">
-            <div class="close-btn" onclick="closeModal()">×</div>
-            <div id="modalBody" class="modal-body"></div>
-        </div>
-    </div>
+    </div> 
 
     <div id="mainModal" class="modal">
         <div class="modal-content">
@@ -932,7 +947,7 @@
                     <p>「為什麼問號看起來這麼尖銳？」有讀者這樣問道。</p>
                     <p>在解說過程中，大家逐漸理解了我們的設計核心：視覺表徵即是心理意象。問號的尖銳，代表著質疑與突破；句號的冰冷，象徵著語氣的終止與冷靜。這些形狀並非隨意勾勒，而是大眾對於符號潛意識的具象化。看到大家眼裡閃爍著理解的光芒，是我們此行最大的收穫。</p>
                 ` 
-            }, // ★★★ 這裡補上了逗號，並新增了 blog4 資料 ★★★
+            },
             'blog4': { 
                 title: '【編輯室手札】當星盤轉動時：我們在三審學到的「煎餅與飛鏢」互動哲學', 
                 img: '三審.JPG', 
@@ -1056,6 +1071,51 @@
             currentProductId = null;
             document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
         }
+
+        /* =========================================
+           部落格分頁功能 (一頁最多 3 篇)
+           ========================================= */
+        const blogItemsPerPage = 3;
+        let currentBlogPage = 1;
+
+        function renderBlogPagination() {
+            const blogItems = document.querySelectorAll('#blogListContainer .blog-item');
+            const totalPages = Math.ceil(blogItems.length / blogItemsPerPage);
+            const paginationContainer = document.getElementById('blogPagination');
+
+            // 判斷哪些文章該顯示、哪些該隱藏
+            const startIndex = (currentBlogPage - 1) * blogItemsPerPage;
+            const endIndex = startIndex + blogItemsPerPage;
+
+            blogItems.forEach((item, index) => {
+                if (index >= startIndex && index < endIndex) {
+                    item.style.display = 'flex'; // 恢復顯示
+                } else {
+                    item.style.display = 'none'; // 隱藏不在該頁的文章
+                }
+            });
+
+            // 渲染底部數字按鈕
+            paginationContainer.innerHTML = '';
+            if (totalPages <= 1) return; // 如果只有一頁或更少，就不顯示按鈕
+
+            for (let i = 1; i <= totalPages; i++) {
+                const btn = document.createElement('button');
+                btn.className = `page-btn ${i === currentBlogPage ? 'active' : ''}`;
+                btn.innerText = i;
+                btn.onclick = () => {
+                    currentBlogPage = i;
+                    renderBlogPagination();
+                };
+                paginationContainer.appendChild(btn);
+            }
+        }
+
+        // 初始化部落格分頁
+        document.addEventListener('DOMContentLoaded', () => {
+            renderBlogPagination();
+        });
+
     </script>
 </body>
 </html>
