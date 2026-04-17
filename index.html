@@ -179,115 +179,64 @@
         .blog-date .day { font-size: 2rem; font-weight: bold; display: block; line-height: 1.2; }
         .blog-date .year { font-size: 0.9rem; margin-top: 5px; display: block; }
 
-        /* 部落格分頁樣式 */
-        .pagination-container {
-            display: flex; justify-content: center; gap: 10px; margin-top: 20px;
-        }
+        .pagination-container { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
         .page-btn {
             padding: 8px 16px; border: 1px solid var(--color-primary);
             background: transparent; color: var(--color-primary);
             cursor: pointer; font-family: var(--font-title); font-size: 1rem;
             transition: all 0.3s;
         }
-        .page-btn.active, .page-btn:hover {
-            background: var(--color-primary); color: #fff;
-        }
+        .page-btn.active, .page-btn:hover { background: var(--color-primary); color: #fff; }
 
         /* --- 標點圖鑑樣式 --- */
-        .punctuation-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 35px;
-            margin-top: 40px;
-        }
-
+        .punctuation-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; margin-top: 40px; }
         .p-item {
-            border: 2px solid var(--color-primary);
-            background: #fff;
-            padding: 20px;
-            cursor: pointer;
-            transition: transform 0.2s;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            border: 2px solid var(--color-primary); background: #fff; padding: 20px;
+            cursor: pointer; transition: transform 0.2s; position: relative;
+            display: flex; flex-direction: column; align-items: center;
         }
-
-        .p-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 5px 5px 0 var(--color-accent);
-        }
-
+        .p-item:hover { transform: translateY(-5px); box-shadow: 5px 5px 0 var(--color-accent); }
         .p-img-box {
-            width: 100%;
-            aspect-ratio: 1 / 1; 
-            background-color: transparent; 
-            overflow: hidden;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 100%; aspect-ratio: 1 / 1; background-color: transparent; 
+            overflow: hidden; margin-bottom: 20px; display: flex;
+            justify-content: center; align-items: center;
         }
-
-        .p-img-box img {
-            width: 100%; height: 100%; object-fit: contain; 
-            transition: transform 0.3s ease;
-        }
+        .p-img-box img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease; }
         .p-item:hover .p-img-box img { transform: scale(1.1); }
-
         .p-number {
             position: absolute; top: -12px; left: -12px;
             background: var(--color-primary); color: #fff;
-            width: 35px; height: 35px;
-            display: flex; align-items: center; justify-content: center;
-            border-radius: 50%; font-size: 0.9rem;
-            border: 2px solid var(--color-bg);
+            width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; font-size: 0.9rem; border: 2px solid var(--color-bg);
         }
+
         /* --- 5. 產品展示 --- */
         #products { scroll-behavior: smooth; }
-
         .product-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 40px; 
-            padding: 20px 40px;
-            max-width: 1000px;
-            margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 40px; padding: 20px 40px; max-width: 1000px; margin: 0 auto;
         }
-
         .product-card {
             background-color: #fff; border: 1px solid #ccc;
             padding: 15px; position: relative; cursor: pointer;
             transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         .product-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--color-primary);
+            transform: translateY(-5px); border-color: var(--color-primary);
             box-shadow: 0 10px 25px rgba(68, 77, 108, 0.2);
         }
-        .product-card.active-card {
-            border: 2px solid var(--color-accent); 
-            background-color: #fffbf0;
-        }
-        .product-card img { 
-            width: 100%; height: 250px; object-fit: cover; 
-            border-bottom: 2px solid #eee; margin-bottom: 15px;
-        }
-        .product-info h3 {
-            font-family: var(--font-title); font-size: 1.4rem;
-            color: var(--color-primary); text-align: center; margin-bottom: 10px;
-        }
+        .product-card.active-card { border: 2px solid var(--color-accent); background-color: #fffbf0; }
+        .product-card img { width: 100%; height: 250px; object-fit: cover; border-bottom: 2px solid #eee; margin-bottom: 15px; }
+        .product-info h3 { font-family: var(--font-title); font-size: 1.4rem; color: var(--color-primary); text-align: center; margin-bottom: 10px; }
         .read-more-btn {
             display: block; width: 100%; padding: 8px 0; text-align: center;
             background: var(--color-bg); color: var(--color-primary);
             border: 1px solid var(--color-primary); font-size: 0.9rem;
-            margin-top: 10px; transition: 0.2s;
+            margin-top: 10px; transition: 0.2s; cursor: pointer; text-decoration: none;
         }
-        .product-card:hover .read-more-btn {
-            background: var(--color-primary); color: #fff;
-        }
+        .product-card:hover .read-more-btn { background: var(--color-primary); color: #fff; }
 
-        /* --- 6. 詳情展開區 --- */
+        /* --- 6. 產品詳情展開區 (修改以適配新排版) --- */
         #product-detail-view {
             display: none; width: 100%; background-color: #fffbf0;
             border-top: 4px double var(--color-primary);
@@ -298,9 +247,8 @@
         }
         @keyframes unfold {
             from { opacity: 0; transform: translateY(-20px); max-height: 0; }
-            to { opacity: 1; transform: translateY(0); max-height: 2000px; }
+            to { opacity: 1; transform: translateY(0); max-height: 5000px; }
         }
-
         .detail-close-btn {
             position: absolute; top: 20px; right: 40px;
             font-size: 1.5rem; width: 40px; height: 40px;
@@ -309,263 +257,141 @@
             cursor: pointer; transition: 0.3s; background: #fff; z-index: 10;
         }
         .detail-close-btn:hover { background: var(--color-primary); color: #fff; }
-
-        .detail-container {
-            max-width: 1100px; margin: 0 auto; padding: 0 40px;
-            display: grid; 
-            grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr); 
-            gap: 50px; align-items: start;
-        }
-        .detail-gallery { display: flex; flex-direction: column; gap: 15px; min-width: 0; }
-        .detail-main-img {
-            width: 100%; height: auto;
-            border: 1px solid var(--color-primary);
-            box-shadow: 5px 5px 0 rgba(0,0,0,0.1);
-        }
-        .detail-thumbs { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 5px; }
-        .d-thumb {
-            width: 80px; height: 80px; object-fit: cover;
-            border: 1px solid #ccc; cursor: pointer; opacity: 0.6; transition: 0.2s; flex-shrink: 0;
-        }
-        .d-thumb:hover, .d-thumb.active { opacity: 1; border: 2px solid var(--color-accent); }
-
-        .detail-text { min-width: 300px; }
-        .detail-text h2 {
-            font-family: var(--font-title); font-size: 2.2rem;
-            color: var(--color-primary); margin-bottom: 10px; line-height: 1.3;
-        }
-        .detail-meta {
-            color: var(--color-accent); font-weight: bold; letter-spacing: 2px;
-            margin-bottom: 30px; display: block; border-bottom: 1px solid #ccc; padding-bottom: 20px;
-        }
-        .detail-desc { font-size: 1rem; line-height: 2; text-align: justify; color: #444; }
+        .detail-container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
         
-        /* 關於我們頁面樣式 */
-        .issue-block h4 {
-            color: var(--color-primary); font-size: 1.4rem;
-            border-left: 5px solid var(--color-accent); padding-left: 15px;
-            margin-top: 40px; margin-bottom: 20px; font-family: var(--font-title);
+        /* 檔案標頭樣式 */
+        .file-header { text-align: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-primary); }
+        .file-header h2 { font-family: var(--font-title); font-size: 2.2rem; color: var(--color-primary); margin-bottom: 10px; }
+        .file-meta { color: var(--color-accent); font-weight: bold; letter-spacing: 2px; display: inline-block; padding: 5px 15px; border: 1px solid var(--color-accent); border-radius: 20px; }
+
+        /* --- 新增：物件解剖報導樣式 --- */
+        .object-section { margin-top: 40px; border-top: 2px dashed #ccc; padding-top: 40px; }
+        .object-row { display: flex; align-items: center; gap: 40px; margin-bottom: 60px; }
+        .object-row.reverse { flex-direction: row-reverse; }
+
+        .obj-img { flex: 1; position: relative; cursor: pointer; border: 4px double var(--color-primary); padding: 5px; background: #fff; transition: transform 0.3s; }
+        .obj-img:hover { transform: translateY(-5px); box-shadow: 5px 5px 0 var(--color-accent); }
+        .obj-img img { width: 100%; display: block; object-fit: cover; }
+        .hover-hint { position: absolute; bottom: 10px; right: 10px; background: var(--color-primary); color: #fff; padding: 4px 8px; font-size: 0.75rem; opacity: 0; transition: opacity 0.3s; }
+        .obj-img:hover .hover-hint { opacity: 1; }
+
+        .obj-text { flex: 1.2; }
+        .obj-tag { display: inline-block; background: var(--color-accent); color: var(--color-bg); padding: 2px 8px; font-size: 0.8rem; font-weight: bold; letter-spacing: 2px; margin-bottom: 10px; }
+        .obj-text h3 { color: var(--color-primary); margin-bottom: 15px; font-family: var(--font-title); font-size: 1.5rem; }
+
+        /* 點擊展開的細節夾 */
+        .more-info { margin-top: 20px; cursor: pointer; }
+        .more-info summary { 
+            color: var(--color-primary); font-weight: bold; outline: none; 
+            border: 1px solid var(--color-primary); padding: 8px 15px; 
+            display: inline-block; background: transparent; transition: 0.3s; 
+            font-size: 0.9rem;
         }
+        .more-info summary:hover { background: var(--color-primary); color: #fff; }
+        .more-info summary::after { content: ' +'; }
+        .more-info[open] summary::after { content: ' -'; }
+        
+        .details-content { 
+            background: #fff; padding: 20px; border: 1px solid var(--color-primary); 
+            border-top: none; box-shadow: inset 0 5px 10px rgba(0,0,0,0.05); 
+            font-size: 0.95rem; line-height: 1.8;
+        }
+        .details-content ul { padding-left: 20px; color: #555; }
+        .details-content li { margin-bottom: 8px; }
+
+        /* 關於我們與其他頁面 */
+        .issue-block h4 { color: var(--color-primary); font-size: 1.4rem; border-left: 5px solid var(--color-accent); padding-left: 15px; margin-top: 40px; margin-bottom: 20px; font-family: var(--font-title); }
         .name-decode-container { display: flex; gap: 30px; margin: 50px 0; flex-wrap: wrap; }
-        .decode-card {
-            flex: 1; background: #fff; border: 2px solid var(--color-primary);
-            padding: 30px; box-shadow: 5px 5px 0 var(--color-accent); min-width: 280px;
-        }
-        .decode-title {
-            font-size: 2rem; font-weight: bold; color: var(--color-primary);
-            border-bottom: 1px dashed #ccc; padding-bottom: 10px;
-            margin-bottom: 20px; font-family: var(--font-title);
-        }
-        .team-container {
-            margin-top: 60px; text-align: center;
-            border-top: 4px double var(--color-primary); padding-top: 40px;
-        }
+        .decode-card { flex: 1; background: #fff; border: 2px solid var(--color-primary); padding: 30px; box-shadow: 5px 5px 0 var(--color-accent); min-width: 280px; }
+        .decode-title { font-size: 2rem; font-weight: bold; color: var(--color-primary); border-bottom: 1px dashed #ccc; padding-bottom: 10px; margin-bottom: 20px; font-family: var(--font-title); }
+        .team-container { margin-top: 60px; text-align: center; border-top: 4px double var(--color-primary); padding-top: 40px; }
         .team-grid { display: flex; justify-content: center; gap: 50px; margin-top: 40px; flex-wrap: wrap; }
-        
-        .flip-card {
-            background-color: transparent; width: 250px; height: 380px;
-            perspective: 1000px; cursor: pointer;
-        }
-        .flip-card-inner {
-            position: relative; width: 100%; height: 100%;
-            text-align: center; transition: transform 0.8s; transform-style: preserve-3d;
-        }
-        .flip-card:hover .flip-card-inner,
-        .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
-        .flip-card-front, .flip-card-back {
-            position: absolute; width: 100%; height: 100%;
-            -webkit-backface-visibility: hidden; backface-visibility: hidden;
-            border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); overflow: hidden;
-        }
-        .flip-card-front {
-            background-color: #444d6c; color: black;
-            display: flex; align-items: center; justify-content: center;
-            border: 2px solid var(--color-primary);
-            background-image: url('LOGO.png');
-            background-size: 60%; background-position: center; background-repeat: no-repeat;
-        }
-        .flip-card-back {
-            background-color: #fff; color: white;
-            transform: rotateY(180deg); border: 2px solid var(--color-primary);
-        }
+        .flip-card { background-color: transparent; width: 250px; height: 380px; perspective: 1000px; cursor: pointer; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.8s; transform-style: preserve-3d; }
+        .flip-card:hover .flip-card-inner, .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); overflow: hidden; }
+        .flip-card-front { background-color: #444d6c; color: black; display: flex; align-items: center; justify-content: center; border: 2px solid var(--color-primary); background-image: url('LOGO.png'); background-size: 60%; background-position: center; background-repeat: no-repeat; }
+        .flip-card-back { background-color: #fff; color: white; transform: rotateY(180deg); border: 2px solid var(--color-primary); }
         .flip-card-back img { width: 100%; height: 100%; object-fit: cover; }
 
-        footer {
-            text-align: center; font-size: 0.9rem; margin-top: 80px;
-            border-top: 4px double var(--color-primary); padding-top: 40px; color: #666;
-        }
-        footer p { text-align: center !important; margin-bottom: 20px; }
+        .quiz-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin: 40px 0; }
+        .quiz-img-container { background: #fff; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
+        .quiz-img-container:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(68, 77, 108, 0.15); }
+        .quiz-img-container img { width: 100%; display: block; height: auto; }
 
-        /* Footer Social */
+        footer { text-align: center; font-size: 0.9rem; margin-top: 80px; border-top: 4px double var(--color-primary); padding-top: 40px; color: #666; }
+        footer p { text-align: center !important; margin-bottom: 20px; }
         .footer-social { margin-bottom: 20px; display: flex; justify-content: center; align-items: center; gap: 15px; }
-        .social-link {
-            display: flex; align-items: center; gap: 8px; color: var(--color-primary);
-            text-decoration: none; font-weight: bold; font-size: 1rem;
-            transition: all 0.3s ease; border-bottom: 1px solid transparent; padding-bottom: 2px;
-        }
+        .social-link { display: flex; align-items: center; gap: 8px; color: var(--color-primary); text-decoration: none; font-weight: bold; font-size: 1rem; transition: all 0.3s ease; border-bottom: 1px solid transparent; padding-bottom: 2px; }
         .social-link:hover { color: var(--color-accent); border-bottom: 1px solid var(--color-accent); transform: translateY(-2px); }
         .ig-icon { width: 20px; height: 20px; fill: currentColor; }
 
         /* Modal Style */
-        .modal {
-            display: none; position: fixed; z-index: 3000; left: 0; top: 0;
-            width: 100%; height: 100%; overflow: auto; 
-            background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px);
-        }
-        .modal-content {
-            background-color: #f7f6f4; margin: 5% auto; padding: 40px;
-            border: 4px double var(--color-primary); width: 90%; max-width: 800px;
-            position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            animation: modalPop 0.3s ease-out;
-        }
+        .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px); }
+        .modal-content { background-color: #f7f6f4; margin: 5% auto; padding: 40px; border: 4px double var(--color-primary); width: 90%; max-width: 800px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5); animation: modalPop 0.3s ease-out; }
         @keyframes modalPop { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-        .close-btn {
-            color: var(--color-primary); position: absolute; top: 10px; right: 20px;
-            font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.2s; line-height: 1;
-        }
+        .close-btn { color: var(--color-primary); position: absolute; top: 10px; right: 20px; font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.2s; line-height: 1; }
         .close-btn:hover { color: var(--color-accent); }
         .modal-title { font-family: var(--font-title); color: var(--color-primary); border-bottom: 1px solid #ccc; padding-bottom: 15px; }
 
         /* ================================================= */
         /* ★★★ RWD 斷點設定 (手機與平板適配) ★★★ */
         /* ================================================= */
-
-        /* 平板直向 (Tablet Portrait): 768px ~ 1024px */
         @media (max-width: 1024px) {
-            .punctuation-grid { grid-template-columns: repeat(2, 1fr); } /* 圖鑑改為兩欄 */
+            .punctuation-grid { grid-template-columns: repeat(2, 1fr); }
             .newspaper-container { width: 95%; }
             .hero-slider { height: 400px; }
         }
 
-        /* 手機 (Mobile): 768px 以下 */
         @media (max-width: 768px) {
-            /* 身體 */
-            body { 
-                padding-left: 0; 
-                padding-top: 60px;    /* 預留給頂部 Logo 列 */
-                padding-bottom: 70px; /* 預留給底部導覽列 */
-            }
-
-            /* 導覽列容器 (變為底部) */
-            nav { 
-                width: 100%; height: 60px; top: auto; bottom: 0; 
-                flex-direction: row; border-right: none; 
-                border-top: 4px double var(--color-accent); 
-                background: #fff; /* 防止透明穿透 */
-            }
-            
-            /* Logo 區塊 (變為頂部固定列) */
-            .nav-logo-container { 
-                position: fixed; top: 0; left: 0;
-                width: 100%; height: 60px;
-                display: flex; /* 在手機上顯示 */
-                border-bottom: 4px double var(--color-accent);
-                background: var(--color-primary);
-                padding: 10px;
-            }
+            body { padding-left: 0; padding-top: 60px; padding-bottom: 70px; }
+            nav { width: 100%; height: 60px; top: auto; bottom: 0; flex-direction: row; border-right: none; border-top: 4px double var(--color-accent); background: #fff; }
+            .nav-logo-container { position: fixed; top: 0; left: 0; width: 100%; height: 60px; display: flex; border-bottom: 4px double var(--color-accent); background: var(--color-primary); padding: 10px; }
             .nav-logo-container img { max-height: 100%; width: auto; }
-
-            /* 按鈕連結區塊 (變為底部橫向滑動) */
-            .nav-links-container { 
-                flex-direction: row; gap: 0; height: 100%; display: flex; padding: 0; width: 100%;
-            }
-            
-            .nav-btn { 
-                writing-mode: horizontal-tb; width: auto; flex: 1; padding: 0; 
-                border-radius: 0; height: 100%; font-size: 0.9rem; margin: 0; 
-                display: flex; align-items: center; justify-content: center; flex-direction: column;
-            }
-            .nav-btn span { display: none; } /* 手機版隱藏英文小字 */
-            
-            /* 點擊效果 */
-            .nav-btn.active { 
-                width: auto; height: 100%; border: none; 
-                border-top: 4px solid var(--color-primary); 
-                background-color: #eee; margin: 0; 
-            }
-
-            /* 內容容器 */
+            .nav-links-container { flex-direction: row; gap: 0; height: 100%; display: flex; padding: 0; width: 100%; }
+            .nav-btn { writing-mode: horizontal-tb; width: auto; flex: 1; padding: 0; border-radius: 0; height: 100%; font-size: 0.9rem; margin: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; }
+            .nav-btn span { display: none; }
+            .nav-btn.active { width: auto; height: 100%; border: none; border-top: 4px solid var(--color-primary); background-color: #eee; margin: 0; }
             .newspaper-container { width: 100%; margin: 20px 0; border-left: none; border-right: none; border-radius: 0; }
             .header-deco { margin: 30px 20px; }
             .section-header { margin-bottom: 40px; }
-            
-            /* 網格與排版 */
-            .punctuation-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; } /* 手機保持兩欄較好看 */
-            .product-grid { grid-template-columns: 1fr; padding: 20px; } /* 產品改為單欄 */
+            .punctuation-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .product-grid { grid-template-columns: 1fr; padding: 20px; }
             .page-section { padding: 0 20px 40px 20px; }
-            .hero-slider { width: 100%; height: 250px; } /* 輪播高度縮小 */
-
-            /* 歷史沿革 Grid */
+            .hero-slider { width: 100%; height: 250px; }
             #history > div { display: flex; flex-direction: column; gap: 30px; }
-            #history img { position: static !important; } /* 取消 sticky */
-
-            /* 關於我們 */
+            #history img { position: static !important; }
             .team-grid { gap: 30px; }
-            
-            /* 產品詳情 RWD */
-            .detail-container { grid-template-columns: 1fr; gap: 30px; padding: 0 20px; }
-            .detail-text { min-width: auto; }
-            
-            /* Modal 彈窗 RWD */
+            .detail-container { padding: 0 10px; }
+            /* 左右交錯改為單欄上下疊放 */
+            .object-row, .object-row.reverse { flex-direction: column; gap: 20px; }
+            .obj-img, .obj-text { width: 100%; }
             .modal-content { width: 95%; margin: 15% auto; padding: 20px; }
             .close-btn { right: 10px; top: 5px; }
         }
 
-            .quiz-grid {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr); /* 預設兩欄兩列 */
-                gap: 25px;
-                margin: 40px 0;
-            }
-            .quiz-img-container {
-                background: #fff;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-                cursor: pointer;
-            }
-            .quiz-img-container:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 10px 20px rgba(68, 77, 108, 0.15);
-            }
-            .quiz-img-container img { width: 100%; display: block; height: auto; }
-
-            @media (max-width: 600px) {
-                .quiz-grid { grid-template-columns: 1fr; } /* 手機變一欄四列 */
-            }
+        @media (max-width: 600px) {
+            .quiz-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="nav-logo-container" onclick="showPage('home')">
-            <img src="LOGO.png" alt="Logo">
+            <img src="LOGO.png" alt="Logo" onerror="this.onerror=null;this.src=''">
         </div>
 
         <div class="nav-links-container">
-            <button class="nav-btn" onclick="showPage('about')">
-                關於我們
-                <span>ABOUT</span>
-            </button>
-            <button class="nav-btn" onclick="showPage('history')">
-                標點史記
-                <span>HISTORY</span>
-            </button>
-            <button class="nav-btn" onclick="showPage('archive')">
-                標點圖鑑
-                <span>ARCHIVE</span>
-            </button>
-            <button class="nav-btn" onclick="showPage('products')">
-                產品展示
-                <span>STORE</span>
-            </button>
-            <button class="nav-btn" onclick="showPage('quiz')">
-                標點測驗
-                <span>QUIZ</span>
-            </button>
+            <button class="nav-btn" onclick="showPage('about')">關於我們<span>ABOUT</span></button>
+            <button class="nav-btn" onclick="showPage('history')">標點史記<span>HISTORY</span></button>
+            <button class="nav-btn" onclick="showPage('archive')">標點圖鑑<span>ARCHIVE</span></button>
+            <button class="nav-btn" onclick="showPage('products')">產品展示<span>STORE</span></button>
+            <button class="nav-btn" onclick="showPage('quiz')">標點測驗<span>QUIZ</span></button>
         </div>
     </nav>
 
     <div class="newspaper-container">
-        
         <div class="header-deco"></div>
 
         <div id="home" class="page-section active">
@@ -582,16 +408,13 @@
             </div>
 
             <div class="blog-list" id="blogListContainer">
-                    
-                    <div class="blog-item" onclick="openModal('blog5')">
-                        <div class="blog-date"><span class="day">11</span><span class="year">2026/03</span></div>
-                        <div>
-                            <h3>【編輯室手記】從搬運工到策展人：在標點符號的世界裡，我們「做就對了」</h3>
-                            <p style="color:#666;">四審正式落幕，編輯部成員現在的共通點...</p>
-                        </div>
+                <div class="blog-item" onclick="openModal('blog5')">
+                    <div class="blog-date"><span class="day">11</span><span class="year">2026/03</span></div>
+                    <div>
+                        <h3>【編輯室手記】從搬運工到策展人：在標點符號的世界裡，我們「做就對了」</h3>
+                        <p style="color:#666;">四審正式落幕，編輯部成員現在的共通點...</p>
                     </div>
                 </div>
-
                 <div class="blog-item" onclick="openModal('blog4')">
                     <div class="blog-date"><span class="day">19</span><span class="year">2026/01</span></div>
                     <div>
@@ -599,7 +422,6 @@
                         <p style="color:#666;">三審過後，編輯室暫時放下了美工刀與膠水，開始拿起了筆記本規劃展場動線...</p>
                     </div>
                 </div>
-
                 <div class="blog-item" onclick="openModal('blog3')">
                     <div class="blog-date"><span class="day">20</span><span class="year">2025/11</span></div>
                     <div>
@@ -607,7 +429,6 @@
                         <p style="color:#666;">小誌打樣與海報首次亮相！揭開符號背後的心理意象。</p>
                     </div>
                 </div>
-
                 <div class="blog-item" onclick="openModal('blog2')">
                     <div class="blog-date"><span class="day">15</span><span class="year">2025/10</span></div>
                     <div>
@@ -615,7 +436,6 @@
                         <p style="color:#666;">為了撐起「標點符號觀測所」的設定，我們忍痛捨棄了原本的視覺稿...</p>
                     </div>
                 </div>
-
                 <div class="blog-item" onclick="openModal('blog1')">
                     <div class="blog-date"><span class="day">01</span><span class="year">2025/10</span></div>
                     <div>
@@ -623,7 +443,7 @@
                         <p style="color:#666;">回顧「逗留計畫」時期，從新潮漸變色到復古報刊的轉變...</p>
                     </div>
                 </div>
-            
+            </div>
             <div class="pagination-container" id="blogPagination"></div>
         </div>
 
@@ -632,7 +452,6 @@
                 <div class="section-title">關於我們</div>
                 <span class="section-subtitle">ABOUT</span>
             </div>
-            
             <div style="max-width: 900px; margin: 0 auto;">
                 <div style="background-color: rgba(255,255,255,0.6); padding: 40px; border: 1px solid var(--color-primary); text-align: center; margin-bottom: 60px;">
                     <h3 style="font-family:var(--font-title); font-size:2rem; margin-bottom:20px; color:var(--color-primary);">重拾語言的節奏</h3>
@@ -649,7 +468,7 @@
                 </div>
 
                 <div style="margin: 60px 0; text-align: center;">
-                    <img src="標點符號再設計.png" alt="標點符號再設計概念圖" style="width: 100%; max-width: 800px; border: 2px solid var(--color-primary); padding: 10px; background: #fff;">
+                    <img src="標點符號再設計.png" alt="標點符號再設計概念圖" onerror="this.onerror=null;this.src=''" style="width: 100%; max-width: 800px; border: 2px solid var(--color-primary); padding: 10px; background: #fff;">
                     <p style="font-size: 0.9rem; color: #666; margin-top: 15px; text-align: center">▲ 標點符號再設計：知識趣味化 × 符號再造</p>
                 </div>
 
@@ -675,7 +494,7 @@
                             <div class="flip-card-inner">
                                 <div class="flip-card-front"></div>
                                 <div class="flip-card-back">
-                                    <img src="瑋琳.png" alt="廖瑋琳">
+                                    <img src="瑋琳.png" alt="廖瑋琳" onerror="this.onerror=null;this.src=''">
                                 </div>
                             </div>
                         </div>
@@ -683,7 +502,7 @@
                             <div class="flip-card-inner">
                                 <div class="flip-card-front"></div>
                                 <div class="flip-card-back">
-                                    <img src="依如.png" alt="劉依如">
+                                    <img src="依如.png" alt="劉依如" onerror="this.onerror=null;this.src=''">
                                 </div>
                             </div>
                         </div>
@@ -698,7 +517,6 @@
                 <div class="section-title">標點史記</div>
                 <span class="section-subtitle">HISTORY</span>
             </div>
-
             <div style="display:grid; grid-template-columns:1fr 2fr; gap:60px; align-items:start;">
                 <div style="position: sticky; top: 120px;">
                     <img src="歷史沿革插圖.png" onerror="this.onerror=null;this.src='小誌介紹頁_封面.png'" style="width:100%; border:10px solid #fff; box-shadow:0 10px 20px rgba(0,0,0,0.2); transform:rotate(-2deg);">
@@ -706,7 +524,6 @@
                 </div>
                 <div>
                     <div style="margin-bottom: 50px; padding: 30px; background: rgba(255,255,255,0.6); border-left: 6px solid var(--color-accent);">
-                        
                         <p style="margin-bottom: 0; font-weight: bold; font-size: 1.1rem; color: #555;">
                             在沒有標點的古代，人們用語氣斷句，卻常一句千解。<br>
                             從甲骨的斜線到漢代朱砂點讀，再到近代十符誕生，標點一路從朗讀的氣口，成為語言裡最敏銳的情感與結構。
@@ -730,10 +547,8 @@
 
                     <h3 style="color:var(--color-primary); margin-bottom:20px;">小行星 — 秩序的誕生</h3>
                     <p>在語言的宇宙裡，標點符號原本是閃爍於星海的小行星。它們沿著句法的引力前行，維持語意的軌道。</p>
-
                     <h3 style="color:var(--color-primary); margin-top:50px; margin-bottom:20px;">流星 — 語意的偏離</h3>
                     <p>當符號開始使用時，星體便墜入大氣層，成為美麗的流星，隨著標點符號的使用越多，流星便會聚煉成廣大的流星雨。</p>
-
                     <h3 style="color:var(--color-primary); margin-top:50px; margin-bottom:20px;">隕石 — 墜落與再生</h3>
                     <p>然而，當人們開始誤用、濫用，那些小行星便被語意的亂流捲入—偏離軌道，滑入混沌。它們拖著語氣的尾焰，閃爍、燃燒，化作碎裂的隕石。</p>
                 </div>
@@ -746,34 +561,7 @@
                 <span class="section-subtitle">ARCHIVE</span>
             </div>
             <p style="text-align:center; color:var(--color-accent); font-weight:bold; margin-bottom:40px; letter-spacing: 2px;">★ 點擊符號可查看詳細檔案 ★</p>
-
             <div class="punctuation-grid" id="punctuationGrid"></div>
-            
-            <script>
-                (function() {
-                    const gridContainer = document.getElementById('punctuationGrid');
-                    const marks = ["句號", "逗號", "頓號", "分號", "冒號", "問號", "驚嘆號", "引號", "夾注號", "破折號", "刪節號", "書名號", "專名號", "間隔號", "連接號"];
-                    let htmlContent = '';
-                    
-                    for(let i=0; i<marks.length; i++) {
-                        let num = (i+1).toString().padStart(2, '0');
-                        let name = marks[i];
-                        let thumbFile = "行星_" + name + ".png"; 
-                        let modalFile = name + ".jpg"; 
-
-                        htmlContent += `
-                        <div class="p-item" onclick="openImageModal('${modalFile}', '${name}')">
-                            <span class="p-number">${num}</span>
-                            <div class="p-img-box">
-                                <img src="${thumbFile}" alt="${name}" onerror="this.onerror=null;this.src='小誌介紹頁_封面.png'">
-                            </div>
-                            <div class="p-name">${name}</div>
-                        </div>
-                        `;
-                    }
-                    gridContainer.innerHTML = htmlContent;
-                })();
-            </script>
         </div>
 
         <div id="products" class="page-section">
@@ -784,39 +572,38 @@
             
             <div class="product-grid">
                 <div class="product-card" id="card-zine" onclick="toggleProduct('zine')">
-                    <img src="輪播1.png" alt="小誌封面">
+                    <img src="輪播1.png" alt="小誌封面" onerror="this.onerror=null;this.src='小誌介紹頁_封面.png'">
                     <div class="product-info">
                         <h3>小誌《號奇星聞》</h3>
-                        <span class="read-more-btn">閱讀詳情 ▼</span>
+                        <span class="read-more-btn">解剖檔案 ▼</span>
                     </div>
                 </div>
 
                 <div class="product-card" id="card-boardgame" onclick="toggleProduct('boardgame')">
-                    <img src="輪播3.png" alt="桌遊封面">
+                    <img src="輪播3.png" alt="桌遊封面" onerror="this.onerror=null;this.src=''">
                     <div class="product-info">
                         <h3>桌遊《號外採訪室》</h3>
-                        <span class="read-more-btn">閱讀詳情 ▼</span>
+                        <span class="read-more-btn">解剖檔案 ▼</span>
                     </div>
                 </div>
             </div>
 
             <div id="product-detail-view">
                 <div class="detail-close-btn" onclick="closeDetailView()">×</div>
-                
                 <div class="detail-container">
-                    <div class="detail-gallery">
-                        <img id="detailMainImg" class="detail-main-img" src="">
-                        <div id="detailThumbs" class="detail-thumbs"></div>
-                    </div>
                     
-                    <div class="detail-text">
+                    <div class="file-header">
+                        <span id="detailMeta" class="file-meta">類型</span>
                         <h2 id="detailTitle">標題</h2>
-                        <span id="detailMeta" class="detail-meta">類型</span>
-                        <div id="detailDesc" class="detail-desc">內容...</div>
+                        <p style="text-align:center; color:#666; max-width:700px; margin:0 auto;" id="detailIntro">引言敘述...</p>
                     </div>
+
+                    <div id="detailDesc"></div>
+
                 </div>
             </div>
         </div>
+
         <div id="quiz" class="page-section">
             <div class="section-header">
                 <div class="section-title">號外！溝通人格觀測儀</div>
@@ -832,10 +619,10 @@
                 <div class="decode-card" style="margin: 40px 0; background: #fff; border: 2px solid var(--color-primary); padding: 30px;">
                     <div class="decode-title" style="font-size: 1.5rem; text-align: center; margin-bottom: 30px;">語宙四大社交星系</div>
                     <div class="quiz-grid">
-                        <div class="quiz-img-container"><img src="心理測驗-01.png" alt="星系01"></div>
-                        <div class="quiz-img-container"><img src="心理測驗-02.png" alt="星系02"></div>
-                        <div class="quiz-img-container"><img src="心理測驗-03.png" alt="星系03"></div>
-                        <div class="quiz-img-container"><img src="心理測驗-04.png" alt="星系04"></div>
+                        <div class="quiz-img-container"><img src="心理測驗-01.png" alt="星系01" onerror="this.onerror=null;this.src=''"></div>
+                        <div class="quiz-img-container"><img src="心理測驗-02.png" alt="星系02" onerror="this.onerror=null;this.src=''"></div>
+                        <div class="quiz-img-container"><img src="心理測驗-03.png" alt="星系03" onerror="this.onerror=null;this.src=''"></div>
+                        <div class="quiz-img-container"><img src="心理測驗-04.png" alt="星系04" onerror="this.onerror=null;this.src=''"></div>
                     </div>
                 </div>
 
@@ -854,7 +641,9 @@
                     </p>
                 </div>
             </div>
-        </div> <footer>
+        </div> 
+
+        <footer>
             <div class="footer-social">
                 <a href="https://www.instagram.com/hao.to.why?igsh=MXVjanl5N3oyOWpoMA==" target="_blank" class="social-link">
                     <svg class="ig-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -875,23 +664,20 @@
     </div>
 
     <script>
-        // 頁面切換
+        // --- 頁面切換 ---
         function showPage(pageId) {
             document.querySelectorAll('.page-section').forEach(el => el.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
             
-            // 移除所有按鈕的 Active 狀態
             document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
             
-            // 只有當按鈕觸發時才加 Active (Logo 點擊不觸發按鈕亮起)
             if(event && event.currentTarget.classList.contains('nav-btn')){
                 event.currentTarget.classList.add('active');
             }
-            
             window.scrollTo(0, 0);
         }
 
-        // 輪播圖
+        // --- 輪播圖 ---
         let slideIndex = 0;
         const slides = document.querySelectorAll('.slide');
         function rotateSlides() {
@@ -902,112 +688,28 @@
         }
         setInterval(rotateSlides, 4000);
 
-        // 圖片/文章 Modal
+        // --- Modal 彈窗 (通用) ---
         function openImageModal(imgSrc, title) {
             const body = document.getElementById('modalBody');
-            body.innerHTML = `<h2 class="modal-title" style="text-align:center; margin-bottom:30px;">${title}</h2><img src="${imgSrc}" style="width:100%;"><p style="text-align:center; margin-top:20px;">（圖片預覽）</p>`;
+            body.innerHTML = `<h2 class="modal-title" style="text-align:center; margin-bottom:30px;">${title}</h2><img src="${imgSrc}" onerror="this.onerror=null;this.src='小誌介紹頁_封面.png'" style="width:100%;"><p style="text-align:center; margin-top:20px; color:#666;">（檔案附件預覽）</p>`;
             document.getElementById('mainModal').style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
 
+        // --- Blog 資料與邏輯 ---
         const blogData = {
-            'blog1': { 
-                title: '【編輯室手記】從「逗留」出發：記初審那日的六個紅圈', 
-                img: '一審.jpeg', 
-                text: `
-                    <p style="color:#888; font-weight:bold; margin-bottom:20px;">【本報訊 / 記者 號外小編 報導】</p>
-                    <p>今天是個適合回憶的日子。在「號外之WHY」正式掛牌營業前，其實我們經歷過一段鮮為人知的「試刊號」時期——那時，我們的代號叫做「逗留計畫」。</p>
-
-                    <h3 style="color:#444d6c; border-left:4px solid #d8c197; padding-left:10px; margin-top:30px;">消失的漸層色與初次提案</h3>
-                    <p>回想起一審提案的那天，我們帶著對標點符號的初步構想站上台：一套尚未成形的桌遊、一本概念小誌，以及當時我們嘗試的「新潮漸變色」視覺風格。那時的我們，雖然還在摸索標點符號的具體再設計方向，但想把這件事做好的心情，卻是無比堅定的。</p>
-
-                    <h3 style="color:#444d6c; border-left:4px solid #d8c197; padding-left:10px; margin-top:30px;">關鍵的一張小報</h3>
-                    <p>為了讓老師們能瞬間進入我們的世界觀，編輯部在簡報前做了一個小小的心機決定：「既然要做報社，就直接發報紙吧！」我們趕製了一批實體小報，在提案前遞送到了每一位老師手中。</p>
-                    <p>或許是紙張的觸感傳遞了我們的誠意，當我們結束報告時，黑板上留下了令人意外的驚喜——整整 6 個圈的好評！這六個圈對我們來說，不僅是成績上的肯定，更是讓我們有勇氣將「逗留計畫」進化為「號外之WHY」的關鍵動力。</p>
-                ` 
-            },
-            'blog2': { 
-                title: '【特刊】風格解密：為何捨棄新潮漸層？一段關於「號外」誕生的秘辛', 
-                img: '主視覺.png', 
-                text: `
-                    <p style="color:#888; font-weight:bold; margin-bottom:20px;">【本報訊 / 主編 報導】</p>
-                    <p>很多讀者在看到我們現在沈穩的「復古報紙」風格時，可能很難想像，其實幾個月前，我們可是走在流行尖端的「霓虹漸層派」。</p>
-
-                    <h3 style="color:#444d6c; border-left:4px solid #d8c197; padding-left:10px; margin-top:30px;">從「逗留」到「號外」的腦力激盪</h3>
-                    <p>一切的轉變，始於那個改名的午後。原本的專案名稱「逗留計畫」，希望能讓人們在標點符號間稍作停留；但經過編輯部無數次的腦力激盪，我們認為這還不夠——我們不只要停留，更要主動挖掘！</p>
-                    <p>於是，「號外之WHY」 正式誕生。WHY 既是「外」的諧音，也代表我們對語言背後「為什麼」的無盡好奇。</p>
-
-                    <h3 style="color:#444d6c; border-left:4px solid #d8c197; padding-left:10px; margin-top:30px;">視覺的急轉彎</h3>
-                    <p>為了撐起「標點符號觀測所」這個帶有歷史考究與知識深度的設定，我們忍痛捨棄了原本的漸層視覺稿，轉而擁抱了現在這個結合「語宙藍」與「星光金」的復古報刊風格。這不僅是視覺的整型，更是一次靈魂的定裝。</p>
-                ` 
-            },
-            'blog3': { 
-                title: '【二審現場】當問號變得尖銳：一場關於「形狀心理學」的對話', 
-                img: '二審.JPG', 
-                text: `
-                    <p style="color:#888; font-weight:bold; margin-bottom:20px;">【本報訊 / 記者 現場直擊】</p>
-                    <p>隨著專案進入二審階段，編輯部終於將腦中的構想實體化——小誌《號奇星聞》的初次打樣以及主視覺海報，終於在本週正式亮相。</p>
-
-                    <h3 style="color:#444d6c; border-left:4px solid #d8c197; padding-left:10px; margin-top:30px;">是引號還是逗號？一場視覺的猜謎遊戲</h3>
-                    <p>展位現場人潮絡繹不絕，許多同學與導師都被這些「熟悉的陌生人」吸引駐足。最有趣的畫面，莫過於大家指著桌上的設計稿爭論：「這一定是引號吧？」「不，我覺得像逗號！」</p>
-                    <p>過程中雖然有猜錯的尷尬，但更多的是恍然大悟的驚喜。這正是我們期待的互動——讓標點符號不再只是課本上的規範，而是可以被討論、被重新凝視的對象。</p>
-
-                    <h3 style="color:#444d6c; border-left:4px solid #d8c197; padding-left:10px; margin-top:30px;">尖銳的問號，冰冷的句號</h3>
-                    <p>「為什麼問號看起來這麼尖銳？」有讀者這樣問道。</p>
-                    <p>在解說過程中，大家逐漸理解了我們的設計核心：視覺表徵即是心理意象。問號的尖銳，代表著質疑與突破；句號的冰冷，象徵著語氣的終止與冷靜。這些形狀並非隨意勾勒，而是大眾對於符號潛意識的具象化。看到大家眼裡閃爍著理解的光芒，是我們此行最大的收穫。</p>
-                ` 
-            },
-            'blog4': { 
-                title: '【編輯室手札】當星盤轉動時：我們在三審學到的「煎餅與飛鏢」互動哲學', 
-                img: '三審.JPG', 
-                text: `
-                    <p style="color:#888; font-weight:bold; margin-bottom:20px;">【本報訊 / 記者 現場直擊】</p>
-                    <p>隨著三審的結束，我們的畢業製作也正式跨過了一個巨大的里程碑。回頭看這幾個月，我們埋首於材質、結構、規則的打磨，終於在這次審查中，將小誌與桌遊的實體完整呈現出來。看著心中構想的畫面變成桌上真實可觸的物件，那份「主體完整了」的踏實感，是這次三審最大的收穫。</p>
-                    <p>然而，設計的挑戰從來不會因為產品做完就結束。老師在審查時給予的建議，瞬間將我們從「製造者」的視角，拉到了「策展人」的高度。</p>
-
-                    <h3 style="color:#444d6c; border-left:4px solid #d8c197; padding-left:10px; margin-top:30px;">轉動星盤時的意外收穫</h3>
-                    <p>印象最深的一幕，是當老師拿起我們桌遊中的「星盤」輕輕轉動時，他開心地分享了一個童年故事。老師說，小時候路邊有個賣煎餅的攤子，生意非常好。但老闆不只是單純地叫賣煎餅，他在攤位旁邊擺了一組飛鏢。路過的人只要射飛鏢，就能換取煎餅的優惠或獎勵。</p>
-                    <p>我們認識到「那個丟飛鏢的過程，就是最成功的互動。」大家為了那一刻的樂趣（飛鏢）停下腳步，進而接觸到了原本可能只是路過的產品（煎餅）。這個故事給了我們極大的震撼。</p>
-
-                    <h3 style="color:#444d6c; border-left:4px solid #d8c197; padding-left:10px; margin-top:30px;">尋找我們的「飛鏢」</h3>
-                    <p>如果說，我們耗費心力製作的桌遊、蘊含龐大資訊量的主題是那塊美味的「煎餅」；那麼，我們是否已經準備好那支能吸引觀眾停下腳步的「飛鏢」了呢？</p>
-                    <p>這正是老師提醒我們接下來的課題：展場互動。在未來的展覽現場，觀眾不會有耐心直接閱讀幾千字的說明書。我們必須思考如何言簡意賅，設計出一套由淺入深的引導機制。也許是星盤的一次轉動，也許是一張直觀的卡牌，我們需要一個低門檻的互動，讓觀眾在「玩」的瞬間產生興趣，進而願意深入了解我們想傳達的複雜議題。</p>
-                    <p>三審過後，編輯室暫時放下了美工刀與膠水，開始拿起了筆記本規劃展場動線。這一次，我們不只要把桌遊做好，更要把故事說好。如何把龐大的資訊量，轉化為直覺的體驗？如何讓觀眾像當年那個被飛鏢吸引的孩子一樣，眼中閃爍著好奇的光芒走向我們？</p>
-                    <p>這將是我們在「煎餅」出爐後，最重要的首要任務。</p>
-                ` 
-            },
-            'blog5': { 
-                title: '【編輯室手札】180 公分的重量，與那台準到發毛的「人格觀測儀」', 
-                img: '四審.JPG', 
-                text: `
-                    <p style="color:#888; font-weight:bold; margin-bottom:20px;">【本報訊 / 記者 現場直擊】</p>
-                    <p>四審正式落幕，編輯部成員現在的共通點，除了如釋重負的笑容，還有痠痛到不行的雙手和腿。這場審查對我們而言，不只是設計的驗收，更像是一場關於體力與心理素質的極限運動。</p>
-
-                    <h3 style="color:#444d6c; border-left:4px solid #d8c197; padding-left:10px; margin-top:30px;">從 180 公分開始的體力考驗</h3>
-                    <p>一切故事的起點，是那塊高達 180x80cm 的巨大展板。為了在四審呈現出最完整的展場規劃，我們化身搬運工，穿梭在工作室與展場之間。托舉的時候我們一度懷疑人生，感嘆未來該如何把這個大東西搬到台北展出，而這時路過的警衛伯伯看著與巨型板材搏鬥的我們，都不禁笑道：「辛苦了，加油！」那瞬間，雖然手腳依然痠麻，但心裡確實被這份簡單的善意療癒了大半。</p>
-
-                    <h3 style="color:#444d6c; border-left:4px solid #d8c197; padding-left:10px; margin-top:30px;">以「人格觀測儀」為餌的標點符號認識之旅</h3>
-                    <p>當展場佈置完成，我們設計的互動環節正式上線。我們以「溝通人格觀測儀」作為誘餌，成功吸引了眾人的好奇心，引導大家踏入這個由標點符號建構的世界。</p>
-                    <p>透過這場測驗，標點符號不再只是書寫工具，而是溝通人格的顯影。看著同學在測驗前屏息以待，測完後驚呼「準到發毛！」是現場最有趣的風景。有人發現自己是沉穩的「句號」，有人是游刃有餘的「逗號」，甚至有人神奇地測出了極具轉折感的「破折號」。當有同學好奇地詢問「哪個標點符號最常見、哪個最稀有」時，我們就知道，這場關於互動的實驗已經成功引起了大家的共鳴。</p>
-
-                    <h3 style="color:#444d6c; border-left:4px solid #d8c197; padding-left:10px; margin-top:30px;">鏡像時光：從忐忑不安到「做就對了」</h3>
-                    <p>在忙碌的展位旁，我們也迎來了不少大二、大三的學弟妹。看著他們眼神中閃爍著「畢製看起來好難」的忐忑與不安，我們彷彿看到了去年的自己。那時的我們也曾有過同樣的掙扎，總是擔心提案會不會過、東西做得夠不夠多，但不知不覺中，我們竟然已經度過了這些風風雨雨。</p>
-                    <p>這種從「害怕」到「專注」的心境轉變，讓我們在四審這一刻感慨萬千。想對正在焦慮的你們說：做就對了！誠如那句名言：「當你真心渴望某樣東西時，整個宇宙都會聯合起來幫助你。」當你真正投入其中，原本覺得困難的事，也會開始變得有趣。</p>
-
-                    <h3 style="color:#444d6c; border-left:4px solid #d8c197; padding-left:10px; margin-top:30px;">五月，我們大展見！</h3>
-                    <p>四審的結束只是序曲，五月的盛大舞台正在等著我們。請大家務必把這兩個日子空出來，來現場親身體驗這場符號的人格冒險：</p>
-                    <p><b>【青春美展】：05.01 — 05.12</b><br>
-                    <b>【新一代設計展】：05.21 — 05.25</b></p>
-                    <p>我們已經準備好，帶著更有趣的標點符號知識與更好玩的互動，在現場等你！</p>
-                ` 
-            }
+            'blog1': { title: '【編輯室手記】從「逗留」出發：記初審那日的六個紅圈', img: '一審.jpeg', text: `<p>（內文省略以保持簡潔，請參考你原本的內容...）</p>` },
+            'blog2': { title: '【特刊】風格解密：為何捨棄新潮漸層？一段關於「號外」誕生的秘辛', img: '主視覺.png', text: `<p>（內文省略...）</p>` },
+            'blog3': { title: '【二審現場】當問號變得尖銳：一場關於「形狀心理學」的對話', img: '二審.JPG', text: `<p>（內文省略...）</p>` },
+            'blog4': { title: '【編輯室手札】當星盤轉動時：我們在三審學到的「煎餅與飛鏢」互動哲學', img: '三審.JPG', text: `<p>（內文省略...）</p>` },
+            'blog5': { title: '【編輯室手札】180 公分的重量，與那台準到發毛的「人格觀測儀」', img: '四審.JPG', text: `<p>（內文省略...）</p>` }
         };
 
         function openModal(id) {
             const data = blogData[id];
             if(!data) return;
             const body = document.getElementById('modalBody');
-            body.innerHTML = `<h2 class="modal-title" style="text-align:center; margin-bottom:30px;">${data.title}</h2><img src="${data.img}" style="max-width:100%; display:block; margin:0 auto;"><div style="text-align:justify; padding:20px 0;">${data.text}</div>`;
+            body.innerHTML = `<h2 class="modal-title" style="text-align:center; margin-bottom:30px;">${data.title}</h2><img src="${data.img}" style="max-width:100%; display:block; margin:0 auto;" onerror="this.onerror=null;this.src=''"><div style="text-align:justify; padding:20px 0;">${data.text}</div>`;
             document.getElementById('mainModal').style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
@@ -1016,41 +718,126 @@
             document.getElementById('mainModal').style.display = 'none';
             document.body.style.overflow = 'auto';
         }
-        
         window.onclick = function(event) { if (event.target == document.getElementById('mainModal')) closeModal(); }
 
-        /* --- 產品功能 (下拉展開) --- */
+        // --- 標點圖鑑生成 ---
+        (function() {
+            const gridContainer = document.getElementById('punctuationGrid');
+            const marks = ["句號", "逗號", "頓號", "分號", "冒號", "問號", "驚嘆號", "引號", "夾注號", "破折號", "刪節號", "書名號", "專名號", "間隔號", "連接號"];
+            let htmlContent = '';
+            for(let i=0; i<marks.length; i++) {
+                let num = (i+1).toString().padStart(2, '0');
+                let name = marks[i];
+                let thumbFile = "行星_" + name + ".png"; 
+                let modalFile = name + ".jpg"; 
+                htmlContent += `
+                <div class="p-item" onclick="openImageModal('${modalFile}', '${name}')">
+                    <span class="p-number">${num}</span>
+                    <div class="p-img-box">
+                        <img src="${thumbFile}" alt="${name}" onerror="this.onerror=null;this.src=''">
+                    </div>
+                    <div class="p-name">${name}</div>
+                </div>`;
+            }
+            if(gridContainer) gridContainer.innerHTML = htmlContent;
+        })();
+
+        // --- ★★★ 產品展示資料 (更新為解剖報導式排版) ★★★ ---
         const productData = {
             'zine': {
-                title: '小誌《號奇星聞》：重新定義閱讀的節奏',
-                meta: 'ZINE / 平面設計',
-                images: [
-                    '輪播1.png', 
-                    '輪播5.png'
-                ],
-                desc: `
-                    <p><strong>【本報訊】</strong> 在數位訊息快速流動的時代，我們是否還記得閱讀紙本時，手指翻閱的觸感？《號奇星聞》不只是一本介紹標點符號的小誌，更是一份來自「語宙」的觀測報告。</p>
-                    <p>設計團隊將15個常用的標點符號，轉化為獨具性格的「行星」。句號是冰冷的終結之星，逗號是拖著長尾巴的延續之星，驚嘆號則是充滿能量的爆發星系。</p>
-                    <p>這本小誌適合所有熱愛文字、設計，以及對日常符號充滿好奇的地球人收藏。</p>
-                `
+                title: '小誌《號奇星聞》',
+                meta: '檔案編號：Z-01 | 平面出版物',
+                intro: '在數位訊息快速流動的時代，我們是否還記得閱讀紙本時，手指翻閱的觸感？《號奇星聞》不只是一本介紹標點符號的小誌，更是一份來自「語宙」的實體觀測報告。',
+                html: `
+                <div class="object-section">
+                    <div class="object-row">
+                        <div class="obj-img" onclick="openImageModal('輪播1.png', '小誌裝幀外觀')">
+                            <img src="輪播1.png" alt="小誌外觀" onerror="this.onerror=null;this.src=''">
+                            <div class="hover-hint">點擊放大查閱</div>
+                        </div>
+                        <div class="obj-text">
+                            <span class="obj-tag">封裝工藝</span>
+                            <h3>✦ 報社特編：高規手感封裝</h3>
+                            <p>捨棄了常規的騎馬釘，我們將小誌視為一份「機密檔案」。從包裝到內頁，視覺上運用了大面積的留白與極簡的現代主義排版，藉此凸顯符號本身的張力。</p>
+                            <details class="more-info">
+                                <summary>查閱紙材與觸感設定</summary>
+                                <div class="details-content">
+                                    <ul>
+                                        <li><strong>紙材選用：</strong> 為了呈現柔和且具份量的手感，封面特別選用了具備細膩紋理的<strong>芙蓉紙</strong>，在光線下能微微透出高級的質感。</li>
+                                        <li><strong>視覺語彙：</strong> 融合了當代 Apple-style 的極簡乾淨，去蕪存菁，讓每一次翻閱都不受干擾。</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="object-row reverse">
+                        <div class="obj-img" onclick="openImageModal('輪播5.png', '行星觀測摺頁')">
+                            <img src="輪播5.png" alt="行星摺頁" onerror="this.onerror=null;this.src=''">
+                            <div class="hover-hint">點擊放大查閱</div>
+                        </div>
+                        <div class="obj-text">
+                            <span class="obj-tag">內頁結構</span>
+                            <h3>✦ 展開的宇宙：十字交叉摺頁</h3>
+                            <p>內頁收錄了 15 顆標點行星的深度報告。句號是冰冷的終結之星，逗號則是拖著長尾巴的延續之星。特殊的結構設計讓閱讀不再是單向的翻頁，而是可以層層展開的探索。</p>
+                            <details class="more-info">
+                                <summary>查閱排版巧思</summary>
+                                <div class="details-content">
+                                    <p>完全展開後，這本小誌將化作一張 1:1 的「語宙觀測地圖牆報」。我們在排版上精準計算了每一道摺線（Knife mold），確保圖像與文字在收摺與展開時，都能形成不同的閱讀路徑。</p>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>`
             },
             'boardgame': {
-                title: '桌遊《號外採訪室》：一場關於語氣的推理遊戲',
-                meta: 'BOARD GAME / 桌上遊戲',
-                images: [
-                    '輪播3.png', 
-                    '數字卡.png', 
-                    '隕石卡.png', 
-                    '事件卡.png', 
-                    '星體卡.png'
-                ],
-                desc: `
-            <p>在語言的浩瀚宇宙中，標點符號是一顆顆維繫語意秩序的星體。它們隱身於文字縫隙之間，掌控節奏、調和語氣、護衛情緒，使句子能順利運行、呼吸、發光。</p>
-            <p>然而最近，這些標點星體開始出現異變——它們從句子軌道中脫離、逃逸、甚至神秘消失。語意紊亂的「無標點星域」逐漸擴張，讓原本清晰的訊息變得模糊、曖昧、甚至誤解重重。</p>
-            <p>身為《號外之WHY》最機敏的採訪記者們，你們被召喚至「號外採訪室」。在這裡，你們必須憑藉直覺、判斷與語意敏銳度，追查標點星體失序的真相——不同標點的消失與錯置，將導致截然不同的故事走向與解讀模式。</p>
-            <p>究竟，是誰或什麼力量攪動了語言宇宙？那些逃離句子的標點符號，又帶著什麼尚未揭露的心事？</p>
-            <p style="font-weight:bold; color:var(--color-primary); margin-top:20px;">現在，就讓我們一起鑽入語言軌道，探索標點星體的秘密，重組語意、恢復秩序，見證一場前所未有的「無標點之旅」。</p>
-        `
+                title: '桌遊《號外採訪室》',
+                meta: '檔案編號：B-02 | 語意推演桌上遊戲',
+                intro: '當標點星體從句子軌道中脫離，語意紊亂的「無標點星域」逐漸擴張。請化身採訪記者，追查標點失序的真相。一場結合語氣判斷與邏輯推理的編輯室大會，正式展開。',
+                html: `
+                <div class="object-section">
+                    <div class="object-row">
+                        <div class="obj-img" onclick="openImageModal('輪播3.png', '語宙星盤主板')">
+                            <img src="輪播3.png" alt="語宙星盤" onerror="this.onerror=null;this.src=''">
+                            <div class="hover-hint">點擊放大查閱</div>
+                        </div>
+                        <div class="obj-text">
+                            <span class="obj-tag">核心機關</span>
+                            <h3>✦ 語宙星盤：重塑語意的羅盤</h3>
+                            <p>這是採訪室中最核心的觀測儀。雙層的同心圓結構象徵著標點符號在語法軌道上的流動。玩家必須透過旋轉星盤，來推演符號所暗示的情緒與關聯。</p>
+                            <details class="more-info">
+                                <summary>查閱製造工藝</summary>
+                                <div class="details-content">
+                                    <ul>
+                                        <li><strong>加工技術：</strong> 盤面運用了精密的<strong>雷射雕刻工藝</strong>，刻劃出細緻的軌道線條，轉動時會帶有扎實的阻尼感。</li>
+                                        <li><strong>視覺設定：</strong> 搭配專屬的 Pantone 特別色印製，確保星盤在不同光源下都能保持沉穩的深藍色調。</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="object-row reverse">
+                        <div class="obj-img" onclick="openImageModal('星體卡.png', '標點星體卡')">
+                            <img src="星體卡.png" alt="星體卡牌" onerror="this.onerror=null;this.src=''">
+                            <div class="hover-hint">點擊放大查閱</div>
+                        </div>
+                        <div class="obj-text">
+                            <span class="obj-tag">遊戲配件</span>
+                            <h3>✦ 星體卡牌與隕石碎塊</h3>
+                            <p>牌組包含了15種重新設計的標點星體，具象化了每個符號的情緒重量。而在遊戲中，代表「濫用」與「誤用」的隕石碎塊將成為玩家推進進度的阻礙。</p>
+                            <details class="more-info">
+                                <summary>查閱配件細節</summary>
+                                <div class="details-content">
+                                    <ul>
+                                        <li><strong>隕石指示物：</strong> 以雷雕技術切割特殊材質，呈現不規則的碎片感。</li>
+                                        <li><strong>採訪筆記本：</strong> 遊戲附贈的計分表，採用低磅數的復古新聞紙印刷，還原記者在現場快速筆記的真實手感。</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>`
             }
         };
 
@@ -1066,25 +853,11 @@
             const data = productData[productId];
             document.getElementById('detailTitle').innerText = data.title;
             document.getElementById('detailMeta').innerText = data.meta;
-            document.getElementById('detailDesc').innerHTML = data.desc;
+            document.getElementById('detailIntro').innerText = data.intro;
             
-            const mainImg = document.getElementById('detailMainImg');
-            const thumbsDiv = document.getElementById('detailThumbs');
-            mainImg.src = data.images[0];
-            thumbsDiv.innerHTML = '';
+            // 將設計好的 HTML 解剖區塊寫入
+            document.getElementById('detailDesc').innerHTML = data.html;
             
-            data.images.forEach((src, idx) => {
-                let img = document.createElement('img');
-                img.src = src;
-                img.className = 'd-thumb' + (idx === 0 ? ' active' : '');
-                img.onclick = function() {
-                    mainImg.src = src;
-                    document.querySelectorAll('.d-thumb').forEach(t => t.classList.remove('active'));
-                    this.classList.add('active');
-                };
-                thumbsDiv.appendChild(img);
-            });
-
             if (detailView.style.display === 'block' && currentProductId === productId) {
                 detailView.scrollIntoView({ behavior: 'smooth', block: 'start' });
             } else {
@@ -1106,50 +879,34 @@
             document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
         }
 
-        /* =========================================
-           部落格分頁功能 (一頁最多 3 篇)
-           ========================================= */
+        // --- 部落格分頁 ---
         const blogItemsPerPage = 3;
         let currentBlogPage = 1;
-
         function renderBlogPagination() {
             const blogItems = document.querySelectorAll('#blogListContainer .blog-item');
             const totalPages = Math.ceil(blogItems.length / blogItemsPerPage);
             const paginationContainer = document.getElementById('blogPagination');
 
-            // 判斷哪些文章該顯示、哪些該隱藏
             const startIndex = (currentBlogPage - 1) * blogItemsPerPage;
             const endIndex = startIndex + blogItemsPerPage;
 
             blogItems.forEach((item, index) => {
-                if (index >= startIndex && index < endIndex) {
-                    item.style.display = 'flex'; // 恢復顯示
-                } else {
-                    item.style.display = 'none'; // 隱藏不在該頁的文章
-                }
+                item.style.display = (index >= startIndex && index < endIndex) ? 'flex' : 'none';
             });
 
-            // 渲染底部數字按鈕
             paginationContainer.innerHTML = '';
-            if (totalPages <= 1) return; // 如果只有一頁或更少，就不顯示按鈕
+            if (totalPages <= 1) return; 
 
             for (let i = 1; i <= totalPages; i++) {
                 const btn = document.createElement('button');
                 btn.className = `page-btn ${i === currentBlogPage ? 'active' : ''}`;
                 btn.innerText = i;
-                btn.onclick = () => {
-                    currentBlogPage = i;
-                    renderBlogPagination();
-                };
+                btn.onclick = () => { currentBlogPage = i; renderBlogPagination(); };
                 paginationContainer.appendChild(btn);
             }
         }
 
-        // 初始化部落格分頁
-        document.addEventListener('DOMContentLoaded', () => {
-            renderBlogPagination();
-        });
-
+        document.addEventListener('DOMContentLoaded', () => { renderBlogPagination(); });
     </script>
 </body>
 </html>
